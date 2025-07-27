@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Login Setup</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background.webp') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .header {
+    width: 100%;
+    background-color: #004b75; /* Dark blue header */
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .header img {
+    max-height: 45px;
+    margin-bottom: 6px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: normal;
+  }
+
+  .content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .container {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 24px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
+  }
+
+  input[type="text"], input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .button {
+    width: 100%;
+    background-color: #4e8c8b;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #3c6e6d;
+  }
+
+  .link {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #004b75;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  #preview {
+    max-width: 100%;
+    display: none;
+    margin-top: 10px;
+    border-radius: 4px;
+  }
+
+  #qrstatus {
+    font-size: 13px;
+    color: #555;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="UOL_Logo.png" alt="University of Oldenburg Logo">
+  <h1>Credentials</h1>
+</div>
+
+<div class="content-wrapper">
+  <div class="container">
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="Enter your username">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password">
+
+    <label for="secret">2FA Secret</label>
+    <input type="password" id="secret" placeholder="Enter or scan QR code">
+
+    <button class="button" id="save">Save</button>
+
+    <h3 style="text-align:left; margin-top: 20px; font-size:16px;">Upload QR Code</h3>
+    <input type="file" id="qrfile" accept="image/*">
+    <img id="preview">
+    <p id="qrstatus"></p>
+  </div>
+</div>
+
+<script src="jsQR.js"></script>
+<script src="options.js"></script>
+</body>
+</html>
