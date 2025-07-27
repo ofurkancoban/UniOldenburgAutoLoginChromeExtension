@@ -25,9 +25,3 @@ It supports:
 - All credentials are encrypted using AES-GCM.
 - Optional Master Password support.
 - No external servers, everything runs locally.
-
-# Roadmap
-- Master password protection
-- Timeout for stored credentials
-- Support for multiple accounts
-- General SSO support for other universities
